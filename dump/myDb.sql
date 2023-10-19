@@ -8,17 +8,21 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 
-CREATE TABLE `Person` (
-  `id` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL
+CREATE TABLE `productos` (
+  `id_producto` int(11) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `descripcion` varchar (255),
+  `precio` int(11),
+  `fotografia` blob,
+  PRIMARY KEY (id_producto)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-INSERT INTO `Person` (`id`, `name`) VALUES
-(1, 'William'),
-(2, 'Marc'),
-(3, 'John'),
-(4, 'Antonio Moreno');
+INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `precio`) VALUES
+(1, 'Prod1', 'producto 1', 100),
+(2, 'Prod2', 'producto 2', 200),
+(3, 'Prod3', 'producto 3', 300),
+(4, 'Prod4', 'producto 4', 400);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
