@@ -8,36 +8,63 @@ include "header.php"
 
             <div class="card">
                 <div class="card-header display-6">
-                    Acciones sobre la base de datos
-                </div>
-
-                <div class="p-4">
-                <div class="table-responsive">
-                    <table class="table table-primary">
-                        <thead>
-                            <tr>
-                                <th scope="col">Alta de producto</th>
-                                <th scope="col">Baja de producto</th>
-                                <th scope="col">Actualización</th>
-                                <th scope="col">Listado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="">
-                                <td scope="row"><a href="alta.php"><i class="bi-database-add px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
-                                <td scope="row"><a href="baja.php"><i class="bi-database-dash px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
-                                <td scope="row"><a href="actualiza.php"><i class="bi-database-check px-3" style="font-size: 4rem; color:yellow;"></a></i></td>
-                                <td scope="row"><a href="listado.php"><i class="bi-database-down px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
-                                </tr>
-                            
-                        </tbody>
-                    </table>
-                </div>
-                
-
-                </div>
+                    Alta de un producto
+                </div>                
             </div>
 
+            <div class="row mt-3 justify-content-md-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header"> 
+                            Ingresar datos:
+                        </div>
+                        <form class="p-4" method="POST" action="registrar.php" enctype="multipart/form-data">
+                        
+                        <div class="mb-3">
+                          <label for="" class="form-label">Identificador</label>
+                          <input type="number"
+                            class="form-control" name="identificador" id="identificador" autofocus required aria-describedby="helpId" placeholder="Introduce el ID">
+                          <small id="helpId" class="form-text text-muted">Identificador</small>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="" class="form-label">Nombre</label>
+                          <input type="text"
+                            class="form-control" name="nombre" id="nombre"  required aria-describedby="helpId" placeholder="Introduce el Nombre">
+                          <small id="helpId" class="form-text text-muted">Nombre</small>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="" class="form-label">Descripcion</label>
+                          <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="" class="form-label">Precio</label>
+                          <input type="number"
+                            class="form-control" name="precio" id="precio" required aria-describedby="helpId" placeholder="Introduce el precio">
+                          <small id="helpId" class="form-text text-muted">Precio</small>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="" class="form-label">Imagen</label>
+                          <input type="file"
+                            class="form-control" name="imagen" id="imagen" required accept="image/*">
+                          <small id="helpId" class="form-text text-muted">Imagen</small>
+                        </div>
+
+                        <div class="d-grid">
+                            <input type="submit" class="btn btn-primary" value="Dar de alta">
+                        </div>
+
+                        
+
+                        </form>
+
+                    </div>
+                </div>
+
+            <a href="index.php"> <i class="bi-arrow-return-left px-3" style="font-size: 4rem; color:black;"></i> </a>
         </div>  
     </div>
 </div>
