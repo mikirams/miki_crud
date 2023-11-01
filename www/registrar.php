@@ -1,7 +1,6 @@
 <?php include "conexion.php";?>
 <?php
     mysqli_select_db($conexion, "productosbd");
-    //var_dump($_POST);
     $identificador = $_POST["identificador"];
     $nombre = $_POST["nombre"];
     $descripcion = $_POST["descripcion"];
@@ -19,6 +18,7 @@
         $arrayArchivo = pathinfo ($nombreArchivo);
         $extension = $arrayArchivo['extension'];
 
+       
         if(!in_array($extension, $extensionesValidas)) {
             echo "Extensión no válida";
             $errores=1;
@@ -28,15 +28,13 @@
             $errores= 1;
         }
 
-        if ($errores ??0 ){
+        if ($errores == 0 ){
+
             $nombreCompleto = $directorioSubida.$nombreArchivo;
-            move_uploaded_fiel($directorioTemp, $nombreCompleto);
+            //echo "Miguel: " . $nombreCompleto;
+            move_uploaded_file($directorioTemp, $nombreCompleto);
         }
     }
-
     $insertar="INSERT productos (id_producto,nombre, descripcion,precio, fotografia) VALUES ($identificador, '$nombre', '$descripcion', '$precio', '$nombreArchivo')";
     mysqli_query($conexion, $insertar);
-    header("Location:alta_ok.php");
-
-
-?>
+    header("Location:alta_ok.php");?>
