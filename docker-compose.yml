@@ -6,7 +6,7 @@ services:
             - "3306:3306"
         command: --default-authentication-plugin=mysql_native_password
         environment:
-            MYSQL_DATABASE: productosbd
+            MYSQL_DATABASE: exam_pdf
             MYSQL_PASSWORD: test
             MYSQL_ROOT_PASSWORD: test 
         volumes:
